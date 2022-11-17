@@ -1,0 +1,21 @@
+######### Hyperparameter Config Validations #############
+Trial 0: validation loss = nan
+Trial 1: validation loss = 0.008874268271028996
+Trial 2: validation loss = 0.012783215381205082
+Trial 3: validation loss = 0.07493603974580765
+Trial 4: validation loss = 0.01249659527093172
+Trial 5: validation loss = 0.012356454506516457
+Trial 6: validation loss = 0.011468796990811825
+Trial 7: validation loss = 0.01385119091719389
+Trial 8: validation loss = 0.012258234433829784
+Trial 9: validation loss = 0.012496335431933403
+Trial 10: validation loss = 0.01085027027875185
+Trial 11: validation loss = 0.018131835386157036
+Trial 12: validation loss = 0.01418242696672678
+Trial 13: validation loss = 0.009872110560536385
+Trial 14: validation loss = 0.010871151462197304
+Trial 15: validation loss = 0.00795435905456543
+Trial 16: validation loss = 0.007222315296530724
+Trial 17: validation loss = 0.007213486824184656
+Trial 18: validation loss = 0.00922977551817894
+Trial 19: validation loss = 755.4562377929688

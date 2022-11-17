@@ -1,0 +1,54 @@
+# General specifications
+run_on_gpu: False                                      # If set to False, pls make sure that you open a new Python Console
+
+#data:
+filepath_input: "../data/prepared_data_hyperparameter_tuning.csv"    # Specify the path to Downloaded SWE/ Temperature Data
+filepath_inflow: "../data/inflow-glomma.xlsx"          # The path of target inflow data (leave it that way when running on US Data)
+keep_other_inflow_columns: False                       # If set to false, all other columns from inflow data are dropped
+target_name: ["all"]                                   # Inflow of which reservoir lake we want to predict --> If length of list > 1, all columns specified in list are added, if list = ["all"] all lakes are added
+resample_method_inflow: "1W"                           # Take the average inflow of the target within given time resolution (reference to pandas resample function for possible values)
+resample_method_input: "1W"                            # How to resample the input (SWE, temperature, Percipitation...) Data, as data is read it is on daily resolution
+interpolate_target: "polynomial"                       # how to interpolate NA values due to different resampling method of input and target
+order_interpolation: 3                                 # which order we want to use for interpolation
+
+# settings for inflow data
+skiprows: 1                                            # for inflow-glomma 1 row, for stula inflow 0
+index_col: 0                                           # We use the dates always as index col for pd.DataFrame
+
+# Time Settings
+split_y_test: True                                    # If set to true, we split the data into training (=actual training and validation set) and test set, if set to false all available data is used as training (e.g. to make prediction in future): Take all datapoints until the last 'n_timesteps' as training and the last 'n_timesteps' as input to make the prediction
+# NOTE: To make actual future prediction: Set split_y_test to false, as we dont want to have a test set, Then training_input_end_date is ignored
+training_input_end_date: 2019-12-31                    # We are making a prediction for "n_outputs" upcoming weeks (all datapoints <= are used to train the model)
+n_timesteps: 40                                       # n_timestamps length of input window, 40 weeks (in case resampling method=1W)
+n_outputs: 52                                         # n_outputs how many weeks we want to predict (in case resampling method=1W)
+
+
+# model settings:
+repeats: 5                                            # how often we want to run whole NN
+epochs: 50
+n_nodes1: 64                                          # the dimensionality of the output space (i.e. the number of output filters in the convolution) for the first layers block
+n_nodes2: 32                                          # the dimensionality of the output space (i.e. the number of output filters in the convolution) for the second layers block
+filter1: 16                                           # the dimensionality of the output space (i.e. the number of output filters in the convolution) for the third layers block
+filter2: 32                                           # the dimensionality of the output space of first Dense Layer
+kernel_size: 6                                        # specifies the length of the 1D convolution window
+learning_rate: 0.001                                  # the learning rate to control how much to change the model in response to the estimated error each time the model weights are updated
+dropout_probability: 0                                # the probability to dop values for the dropout layers; value of 0 is equivalent to no dropout
+use_batch_normalization: False                        # apply batch normalizations for the convolutions
+batch_size: 32
+monitor: "val_loss"                                   # "val_loss" or "loss": what to monitor for early stopping: Stop training when the monitored metric has stopped improving
+patience: 20                                          # Number of epochs with no improvement after which training will be stopped.
+loss: "mse"                                           # Loss function. string (name of loss function)
+optimizer: "adam"                                     # String (name of optimizer)
+
+#L2 regularization/weight decay
+weight_regularizer: 1.e-4                            # every coefficient in the weight matrix of the layer will add weight_regularizer * weight_coefficient_value**2 to the total loss of the network
+
+#plot and predictions:
+run_plot: True                                        # run make_plots, yes or no
+path_fc: "../plots/forecast_plot.pdf"                 # save forecast plot as pdf in this file
+path_lc: "../plots/loss_curve_plot.pdf"               # save loss curve plot as pdf in this file
+
+# layer_using
+rescnn: [True, True, True]                            # For 3 ResCNN layers, True means using this layer, False means not using this layer
+lstm: [True, True, True, True]
+path_predictions: "../data/prediction.csv"            # Where to store the predictions of Model
