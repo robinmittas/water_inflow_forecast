@@ -1,7 +1,9 @@
 # Digital snow melt - Automated forecasting from snow parameters: TUM DI-LAB
 
 Further Information can be found here: https://www.mdsi.tum.de/di-lab/vergangene-projekte/ws2021-thinkoutside-the-digital-snow-scanner-automated-extraction-of-snow-parameters-from-radar-data/
+
 Final Report: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/ThinkOutside_WS2021_FinalReport.pdf
+
 Final Presentation: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/ThinkOutside_WS2021_FinalPresentation.pdf
 
 ## Abstract
