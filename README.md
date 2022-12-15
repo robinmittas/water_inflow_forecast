@@ -6,6 +6,8 @@ Final Report: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/ThinkOutside_W
 
 Final Presentation: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/ThinkOutside_WS2021_FinalPresentation.pdf
 
+All Work has been done together with Fabienne Greier, Florian Donhauser,  Md. Forhad Hossain and Wudamu.
+
 ## Abstract
 The forecast of seasonal snowmelt and inflow into water reservoirs based on automatic extraction of snow parameters plays a crucial role in the hydropower industry to plan and deliver energy more efficiently.
 This project aims to research appropriate Machine Learning (ML) methods for predicting the water inflow of specific reservoir lakes, implement a model based on an opensource ML model, train it with Norwegian data, and optimize the model prediction performance.
