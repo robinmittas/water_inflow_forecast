@@ -9,7 +9,7 @@ Final Presentation: https://www.mdsi.tum.de/fileadmin/w00cet/di-lab/pdf/ThinkOut
 All Work has been done together with Fabienne Greier, Florian Donhauser,  Md. Forhad Hossain and Wudamu.
 
 ## Time Series Forecasting
-The Model under ResCNN_LSTM can be used to forecast any kind of Time Series with seasonal patterns. Within this project we forecasted the Volume of Wwaterinflow into Reservoir Lakes. The Model combines Residual Connections, Convolutional and LSTM Layers.
+The Model under ResCNN_LSTM can be used to forecast any kind of Time Series with seasonal patterns. Within this project we forecasted the Volume of Wwaterinflow into Reservoir Lakes. The Model combines Residual Connections, Convolutional and LSTM Layers. The input data is passed through the network by sliding window inputs. You will need to adjust some functions in ResCNN_LSTM_fit.py to your needs.
 
 ## Abstract
 The forecast of seasonal snowmelt and inflow into water reservoirs based on automatic extraction of snow parameters plays a crucial role in the hydropower industry to plan and deliver energy more efficiently.
