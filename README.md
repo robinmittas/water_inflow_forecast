@@ -25,7 +25,7 @@ We have created a requirements.txt file which contains all python-packages neede
 To install these packages, we suggest creating a virtual environment to run all scripts.
 
 ## How to trigger the different scripts
-- First of all we need to download the data. For that navigate into the /download_data folder and specify your configurations, afterwards run download_data.py. Please make sure to have a good NA treatment. Default values will do so.
+- First of all make sure, to have some suiting input data. We have used historic 10-15 years weekly data.
 - As a next step we can trigger the script /ResCNN_LSTM/hyperparameter_tuning.py which will find the best possible hyperparameters for the specified station, date setting in /ResCNN_LSTM/config.yaml
 - Once this has run successfully we can have a look into /ResCNN_LSTM/hypertune_configs/configs_evaluation.txt and find the best config setting
 - Now we just have to modify the path to this specific setting in /ResCNN_LSTM/ResCNN_LSTM_fit.py in the very last line of the code
